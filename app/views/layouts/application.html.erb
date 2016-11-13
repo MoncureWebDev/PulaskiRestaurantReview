@@ -10,9 +10,11 @@
 <body>
 
 <%= render 'layouts/navbar' %>
-	<div class="container-fluid">
-		<%= yield %>
-		<%= render 'layouts/footer' %>
-	</div><!--END container-fluid DIV-->
+	<div class="container">
+		<div class="container-fluid">
+			<%= yield %>
+			<%= render 'layouts/footer' %>
+		</div><!--END container-fluid DIV-->
+	</div>
 </body>
 </html>
