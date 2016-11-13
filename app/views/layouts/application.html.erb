@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PulaskiRestaurantReview</title>
+  <title>Pulaski Restaurant Review</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+	<%= render 'layouts/bootstrap' %>
 </head>
 <body>
-<a href="/pages/about">About</a>
-<a href="/pages/contact">Contact</a>
-<%= yield %>
-<p>Copyright &copy 2016 by Chris Moncure</p>
+
+<%= render 'layouts/navbar' %>
+	<div class="container-fluid">
+		<%= yield %>
+		<%= render 'layouts/footer' %>
+	</div><!--END container-fluid DIV-->
 </body>
 </html>
