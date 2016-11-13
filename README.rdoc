@@ -1,28 +1,12 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Pulaski Virginia Restaurant Review!
 
-Things you may want to cover:
+This application was created to offer a localized Restaraunt Review website 
+to the Pulaski County and New River Valley areas of Southwest Virginia.
 
-* Ruby version
+The application offers users the ability to sign up, add local restaraunts, addresses, phone numbers, websites, etc., then vote and leave comments about the restaurants.  The original intention was for the site to offer only local restaurant listings, although I have not implemented means of limiting the distance to restaurant locations.
 
-* System dependencies
+- Ruby 2.3.1
+- Rails 4.2.7.1
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
