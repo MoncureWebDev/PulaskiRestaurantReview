@@ -14,7 +14,8 @@ The application offers users the ability to sign up, add local restaraunts, addr
 - Fog-aws Amazon S3 for image storage
 - rails_12factor gem for heroku
 - pg  gem for heroku Postgres database
-
+- ImageMagick 6.8.9-9
+- mini_magick 4.5.1
 
 
 
