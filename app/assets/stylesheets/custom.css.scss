@@ -77,7 +77,14 @@
 			font-weight: bold;
 		}/*END .navbar-nav > li > a*/
 
+		.navbrand-container {
+			text-align: center;
+		}
+
 		.navbar-brand {
+			margin-left: -20px;
+			text-align: center;
+			position: center;
 			color: black;
 			font-size: 30px;
 			font-weight: bold;
@@ -100,11 +107,18 @@
 	
 	border: 1px solid #44B4D5;
 	/*border-radius: 30px;*/
+	font-size: 14px;
 }
 
 
 
 .container-fluid {
-	padding: 10px 120px;
+	padding: 10px 70px;
 
 }
+/*
+.welcomeTitle {
+	background: rgba(255, 255, 255, 0.7);
+	border: 1px solid #44B4D5;
+}
+*/
