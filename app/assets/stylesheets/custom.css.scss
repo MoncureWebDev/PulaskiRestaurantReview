@@ -29,37 +29,6 @@
 
 
 
-/*----------------------------------------------------------------------*/
-.jumboBG {
-	border-radius: 50px;
-	opacity: 1;
-	/*background-color: #fdf8e1; */
-	background: rgba(253, 248, 225, 0.5);
-	
-	border: 1px solid #f2cb3b;
-	h1 {
-		text-align: center;
-		color: #ffffff;
-		font-weight: bold;
-		/*Text Border Effect*/
-		text-shadow: 0 0 4px #000; /* horizontal-offset vertical-offset 'blur' colour */
-		-moz-text-shadow: 0 0 4px #000;
-		-webkit-text-shadow: 0 0 4px #000;		
-		}
-
-	h2 {
-		text-align: center;
-		color: #c41200;
-		font-weight: bold;
-		}
-	h3 {
-		text-align: center;
-	}
-
-
-}/*END JUMBOTRON STYLES*/
-
-/*------------------------------------------------------------------------*/
 
 
 
@@ -98,17 +67,7 @@
 
 
 
-.tablecontainer {
-	/*background-color: #44B4D5;*/
-	/*background: rgba(6,220,251, 0.5);*/
 
-	/*background: rgba(253, 248, 225, 0.5);*/
-	background: rgba(255, 255, 255, 0.7);
-	
-	border: 1px solid #44B4D5;
-	/*border-radius: 30px;*/
-	font-size: 14px;
-}
 
 
 
@@ -122,3 +81,7 @@
 	border: 1px solid #44B4D5;
 }
 */
+
+.h3Back {
+	font-size: 20px;
+}
