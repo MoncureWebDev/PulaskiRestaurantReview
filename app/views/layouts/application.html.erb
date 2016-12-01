@@ -14,8 +14,32 @@
 <%= render 'layouts/navbar' %>
 <br>	
 		<div class="container-fluid">
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
+
+		<!--p class="notice"><%#= notice %></p>
+		<p class="alert"><%#= alert %></p-->
+
+
+
+<!--REPLACING DEFAULT ALERTS WITH BOOTSTRAP STYLED ONES-->
+<!--WORKS WITH RAILS 4.2 OR LATER.  IF USING 4.1 OR EARLIER, 
+NEED TO DELETE QUOTES AROUND "notice" and add a : before (ex.  :notice)-->
+
+<!--This basically adds Bootstrap styling to our Devise error messages!-->
+
+    <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+        <div class="alert alert-<%= name == "notice" ? "success" : "danger" %> alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        </div>
+      <% end %>
+    <% end %> 
+
+<!--******************************************************-->
+
+
+
+
 		<br>
 			<%= yield %>
 			<%= render 'layouts/footer' %>
