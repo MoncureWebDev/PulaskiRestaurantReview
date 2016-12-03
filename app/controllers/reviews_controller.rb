@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /reviews
   # GET /reviews.json
@@ -25,6 +26,10 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(review_params)
+
+    @review.user_id = current_user.id
+    # This will set the user id of a newly made review to be the same as our curent user
+    # we also need to make sure the user is currently signed in.  We do this at the top ^
 
     respond_to do |format|
       if @review.save
