@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  resources :reviews, except: [:show, :index]
+  #resources :reviews, except: [:show, :index]
+  #automatically creates URL's for our various pages.  We need to place our restaurant ID
+  # in our URL, and to do that we'll nest our reviews resource Inside our restaurant Resource.
 
 
   devise_for :users
-  resources :restaurants
+  resources :restaurants do 
+    resources :reviews, except: [:show, :index]
+  end
+
+
+
   get 'pages/about'
 
   get 'pages/contact'

@@ -15,8 +15,28 @@
       <br>
       <a class="navbar-brand" href="/">Restaurant Review</a>-->
      
-      <%= link_to "Pulaski Restaurant Review", root_path, class: "navbar-brand" %>
+    
+
+      <!--Original nav-brand link-->
+
+      <!--%= #link_to "Pulaski Restaurant Review", root_path, class: "navbar-brand" %-->
+     
+
+      <!--HTML version of nav-brand link to make it work the way I wanted...-->
+
+      <!--a class="navbar-brand"  href="#home">
+        <span><p>Pulaski Restaurant</p><p>Review</p></span>
+        
+      </a-->
+    
+
+      <!--Attempt to blend the two...-->
+      <%= link_to root_path do %>
+        <span class="navbar-brand"><p>Pulaski Restaurant</p><p>Review</p></span>
    
+      <% end %>
+
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

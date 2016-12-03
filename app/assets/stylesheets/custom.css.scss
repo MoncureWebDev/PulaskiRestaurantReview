@@ -30,17 +30,39 @@
 
 
 
+.navbar {
 
+
+}
 
 
 .navbar-fixed {
 	opacity: 1;
-	height: 100px;
+	height: 130px;
 	.container-fluid {
 		padding-top: 25px;
-		height: 100px;
+		height: 130px;
 		background-color: #b80b03;
+		
+
+	/*Trying to add BG image to navbar*/
+		background: url("navback.jpg") no-repeat center center; 
+		margin: 0px;
+		height: 130px;
+
+
+
+
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+
+
+
+
 		.navbar-nav > li > a {
+			margin-top: 15px;
 			color: #ffffff;
 			font-size: 16px;
 			font-weight: bold;
@@ -61,6 +83,11 @@
 			font-family: 'Concert One', cursive;
 			text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 		}/*END .navbar-brand*/
+
+
+		.navbar-form {
+			margin-top: 25px;
+		}
 	}/*END .container-fluid*/
 }/*END .navbar-default*/
 
