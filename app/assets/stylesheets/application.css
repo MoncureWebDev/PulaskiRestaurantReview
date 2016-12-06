@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+@import "custom.css.scss";
+@import "containerCSS.scss";
+@import "sticky-footer.css";
