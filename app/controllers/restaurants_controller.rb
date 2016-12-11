@@ -6,11 +6,13 @@ class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
     #@restaurants = Restaurant.order(date: :desc).page(params[:page]).per(5)
+    
   end
 
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    @reviews = Review.where(restaurant_id: @restaurant.id)
   end
 
   # GET /restaurants/new

@@ -1,9 +1,33 @@
 
+
+
+
+
+
 /*  custom.css.scss ...... My Custom Styles*/
+
+* {
+	margin: 0;
+}
+
+html, body {
+	margin: 0;
+	height: 100%;
+}
+
+a:hover {
+	
+}
+
 .container-fluid {
 	padding: 10px 70px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
 
 }
+
 
 
 .backgroundBG {
@@ -31,6 +55,7 @@
 		background: url("https://s3.amazonaws.com/pulaski-restaurant-review/navback.jpg") no-repeat center center; 
 		margin: 0px;
 		height: 130px;
+		width: 100%;
 
 
 
@@ -91,7 +116,7 @@
 	border-radius: 50px;
 	
 	/*background-color: #fdf8e1; */
-	background: rgba(253, 248, 225, 0.8);
+	background: rgba(253, 248, 225, 0.9);
 	
 	border: 1px solid #f2cb3b;
 	h1 {
@@ -116,6 +141,69 @@
 
 }/*END JUMBOTRON STYLES*/
 
+
+
+
+
+
+
+.restaurantcontainer {
+
+	
+	/*background-color: #fdf8e1; */
+	background: rgba(253, 248, 225, 0.9);
+	
+	border: 1px solid #f2cb3b;
+
+
+	h2 {
+		/*text-align: center;*/
+		color: #c41200;
+		font-weight: bold;
+		}
+	h3 {
+		text-align: center;
+	}
+}
+
+
+.reviewscontainer {
+
+
+	background: rgba(255, 255, 255, 0.9);
+	padding: 20px;
+
+
+	
+	border: 1px solid #44B4D5;
+	border-radius: 20px;
+
+	
+	p {
+		font-size: 14px;
+	}
+
+	h2 {
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*-------------------------TableContainer STYLES-----------------------------------------------*/
 
 
@@ -124,7 +212,8 @@
 	/*background: rgba(6,220,251, 0.5);*/
 
 	/*background: rgba(253, 248, 225, 0.5);*/
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 0.9);
+	/*background: linear-gradient(red, black);*/
 	
 	border: 1px solid #44B4D5;
 	/*border-radius: 30px;*/
@@ -138,12 +227,53 @@
 
 
 
+.jumbotron {
+	box-shadow: 1px 5px 20px #686868;
+}
+
+
+.signupcontainer {
+	background: rgba(187,222,251, 0.9);
+	border: 1px solid #44B4D5;
+	font-size: 14px;
+	
+
+
+	.input-group-addon {
+		background-color: #64b5f6;
+	}
+
+
+
+	h2 {
+		padding-top: 2px;
+		height: 38px;
+		width: 200px;
+		margin: 0 auto;
+		border-radius: 15px;
+		text-align: center;
+		background-color: #64b5f6;
+	}
+
+
+
+
+
+} /*         End .signupcontainer            */
+
+
+
+
+
+
+
+
 
 .cancelMyAccount {
 	
 	
 
-	background: rgba(255,200,200, 0.8);
+	background: rgba(255,200,200, 0.9);
 	text-align: center;
 	border: 1px solid #F70000;
 	width: 600px;
@@ -160,3 +290,54 @@
 
 
 }/*END JUMBOTRON STYLES*/
+
+
+
+
+
+
+
+
+
+
+
+.glyphicon {
+
+	color: #1565c0;
+}
+
+
+/*Table Column Autowidth*/
+td {
+	white-space: nowrap;
+}
+
+
+
+/*Wrapping Long Text Content*/
+pre {
+	white-space: pre-line;
+	word-wrap:  break-word;
+}
+
+
+
+.pushdown {
+	height: 4em;
+}
+
+
+.footer {
+	height: 4em;
+	/*position: absolute;*/
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-top: 30px;
+	background: rgba(187,24,17, 0.9);
+	border-top: 1px solid #900000;
+	text-align: center;
+	color: white;
+  font-size: 18px;
+  text-align: center;
+}

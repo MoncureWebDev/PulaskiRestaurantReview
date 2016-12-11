@@ -1,10 +1,20 @@
-<div class="jumbotron jumboBG">
+
+
+<div class="jumbotron restaurantcontainer">
+
+<div class="row">
+<div class="col-md-7">
+
+
+<h2>
+	<%= @restaurant.name %>
+</h2>
+
 <%= image_tag @restaurant.image_url %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+
+
+
 
 <p>
   <strong>Address:</strong>
@@ -18,11 +28,45 @@
 
 <p>
   <strong>Website:</strong>
-  <%= @restaurant.website %>
+  <%= link_to @restaurant.website, @restaurant.website %>
 </p>
 
 
+
 <%= link_to "Write a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+
+
+
 <%= link_to 'Edit', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
 <%= link_to 'Back', restaurants_path, class: "btn btn-link" %>
+
+
+</div><!--END col-md-8 -->
+<div class="col-md-5">
+
+
+<!--    REVIEWS SECTION    -->
+<div class="reviewscontainer">
+<h2>Reviews</h2>
+
+
+<% if @reviews.blank? %>
+	<h3>No reviews yet.  Be the first to write one!</h3>
+<% else %>
+
+	<% @reviews.each do |review| %>
+		<p><%= review.rating %></p>
+		<p><%= review.comment %></p>
+
+	<% end %>
+<% end %>
+
+
+</div>
+
+
+</div><!--END col-md-4 -->
+</div><!--END .row-->
+
+
 </div>
