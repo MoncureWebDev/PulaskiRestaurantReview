@@ -55,7 +55,12 @@
 <% else %>
 
 	<% @reviews.each do |review| %>
-		<p><%= review.rating %></p>
+	
+
+		<div class="star-rating" data-score= <%= review.rating %> ></div>
+
+
+
 		<p><%= review.comment %></p>
 
 	<% end %>
@@ -70,3 +75,18 @@
 
 
 </div>
+
+
+<script> //DISPLAY OUR STAR RATING SYSTEM ON OUR .star-rating DIV ABOVE!!!
+	
+//declare our Amazon s3 star images path
+	$('.star-rating').raty({path: 'https://s3.amazonaws.com/pulaski-restaurant-review/stars', 
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+	}});
+
+
+
+	//$('.star-rating').raty();
+</script>
