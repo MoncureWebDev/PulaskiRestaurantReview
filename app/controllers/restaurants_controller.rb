@@ -22,6 +22,8 @@ class RestaurantsController < ApplicationController
     else
       @avg_rating = @reviews.average(:rating).round(2)
     end
+
+   
   end
 
   # GET /restaurants/new

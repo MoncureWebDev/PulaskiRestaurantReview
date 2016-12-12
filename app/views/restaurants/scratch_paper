@@ -1,0 +1,83 @@
+<p class="reviewtext"><%= review.comment %></p>
+
+
+THIS WORKS!!! NOW JUST NEED A "MORE" LINK....
+<p class="reviewtext"><%= truncate(review.comment, length: 100) %></p>
+
+
+
+<%= h(review.comment).gsub(/\n/, '<br/>').html_safe %>
+
+
+
+
+
+
+
+
+<div>
+  <% if @major.glance.length > 250 %>
+    <%= truncate(@major.glance, length: 250) %>
+    <%= link_to '...Read more', '', class: "read-more-#{@major.id}" %>
+    <script>
+      $('.read-more-<%= @major.id %>').on('click', function(e) {
+        e.preventDefault()
+        $(this).parent().html('<%= escape_javascript @major.glance %>')
+      })
+    </script>
+  <% else %>
+    <%= @major.glance %>
+  <% end %>
+<div>
+
+
+
+HERE'S MY CODE ADDAPTATION.....
+
+
+        <%= if @review.comment.length > 250 %>
+          <%= truncate(@review.comment, length: 250) %>
+          <%= link_to '...Read more', '', class: "read-more-#{@review.id}" %>
+          <script>
+            $('.read-more-<%= @review.id %>').on('click', function(e) {
+              e.preventDefault();
+              $(this).parent().html('<%= escape_javascript @review.comment %>');
+            })
+          </script>
+        <% else %>  
+            Just display what I was displaying before!
+        <% end %><!--END if review.comment.length...-->
+
+
+
+
+
+
+
+
+
+
+
+
+        BREAK APART.....
+  <%= if @reviews.comment.length > 250 then %>
+  <% end %>
+
+
+
+
+
+Here's my best working example so far......
+          <p class="reviewtext">
+
+        
+          <% if @review.comment.length > 100 %>
+          <%= truncate(@review.comment, length: 100) %>
+          <%= link_to '... Read more', "$(this).parent().html('#{escape_javascript @review.comment}')" %>
+          <% else %>
+            <%= @review.comment %>
+
+          <% end %>
+            
+
+          </p>
