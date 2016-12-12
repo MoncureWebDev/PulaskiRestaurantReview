@@ -12,7 +12,16 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    @reviews = Review.where(restaurant_id: @restaurant.id)
+    #defining @reviews and showing review for the restaurant
+    @reviews = Review.where(restaurant_id: @restaurant.id).order("created_at DESC")
+    #take all our restaurant ratings, average them, round to 2 decimal places.
+    # BUT, if there aren't any reviews, it won't have anything to average, and 
+    # will give us an error. so we need to say if.....
+    if @reviews.blank?
+      @avg_rating = 0
+    else
+      @avg_rating = @reviews.average(:rating).round(2)
+    end
   end
 
   # GET /restaurants/new

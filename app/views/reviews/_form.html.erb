@@ -12,10 +12,11 @@
     </div>
   <% end %>
 
-  <div class="form-group field">
-    <%= f.label :rating %>
-    <%= f.number_field :rating, class: "form-control" %>
-  </div>
+
+<!--REPLACE SECTION FOR RATING WITH STARS!-->
+  <h3>Rate this restaurant!</h3>
+  <h5>(click the number of stars you want to give this restaurant)</h5>
+  <div id="star-rating"></div>
   <div class="form-group field">
     <%= f.label :comment %>
     <%= f.text_area :comment, class: "form-control" %>
@@ -25,3 +26,13 @@
   </div>
 <% end %>
 </div>
+
+
+<script> //DISPLAY OUR STAR RATING SYSTEM ON OUR .star-rating DIV ABOVE!!!
+  
+//declare our Amazon s3 star images path
+  $('#star-rating').raty({
+    path: 'https://s3.amazonaws.com/pulaski-restaurant-review/stars',
+    scoreName: 'review[rating]'
+  });
+</script>

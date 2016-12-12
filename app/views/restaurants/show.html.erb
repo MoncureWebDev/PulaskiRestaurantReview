@@ -3,12 +3,23 @@
 <div class="jumbotron restaurantcontainer">
 
 <div class="row">
-<div class="col-md-7">
+<div class="col-md-4">
 
 
 <h2>
 	<%= @restaurant.name %>
 </h2>
+<!-- Showing AVERAGE star rating for this restaurant!-->
+<div class="star-rating" data-score= <%= @avg_rating %> ></div>
+<!-- This time instead of review.rating, we'll use the @avg_rating variable we JUST defined in the RestaurantsController show action!-->
+
+
+<!--The AVG star rating means little without knowing the total # of reviews, so...-->
+<p>Average rating, <%= "#{@reviews.length} total reviews" %></p>
+
+
+<!--#{} is a special feature of rails called string interpolation.  Ruby code inside curly braces will be calculated and then placed on the page as text.-->
+
 
 <%= image_tag @restaurant.image_url %>
 
@@ -17,17 +28,17 @@
 
 
 <p>
-  <strong>Address:</strong>
+  <h4><strong>Address:</strong></h4>
   <%= @restaurant.address %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <h4><strong>Phone:</strong></h4>
   <%= @restaurant.phone %>
 </p>
 
 <p>
-  <strong>Website:</strong>
+  <h4><strong>Website:</strong></h4>
   <%= link_to @restaurant.website, @restaurant.website %>
 </p>
 
@@ -42,31 +53,40 @@
 
 
 </div><!--END col-md-8 -->
-<div class="col-md-5">
+<div class="col-md-8">
+
+
+
+
 
 
 <!--    REVIEWS SECTION    -->
+
 <div class="reviewscontainer">
 <h2>Reviews</h2>
 
+<!--		NOT SURE IF I'LL KEEP THE TABLE.. NOT WORKING WELL.  -->
 
 <% if @reviews.blank? %>
 	<h3>No reviews yet.  Be the first to write one!</h3>
 <% else %>
-
+<!--    ***  Now we want to place our Reviews in a Table format! ***    -->
+<div class="container panel-body table-responsive">
+<table class="table table-condensed">
+<tbody>
 	<% @reviews.each do |review| %>
-	
-
-		<div class="star-rating" data-score= <%= review.rating %> ></div>
-
-
-
-		<p><%= review.comment %></p>
-
+		<tr class="row">
+			<td style ="word-break:break-word;">
+				<div class="star-rating" data-score= <%= review.rating %> ></div>
+				<span><p><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p></span>
+			</td>
+		</tr>
 	<% end %>
+	</tbody>
+	</table>
 <% end %>
 
-
+</div>
 </div>
 
 

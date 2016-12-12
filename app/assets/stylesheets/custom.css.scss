@@ -156,7 +156,7 @@ a:hover {
 	border: 1px solid #f2cb3b;
 
 	p {
-		font-size: 16px;
+		font-size: 18px;
 	}
 	h2 {
 		/*text-align: center;*/
@@ -166,12 +166,15 @@ a:hover {
 	h3 {
 		text-align: center;
 	}
+	a {
+		font-size: 18px;
+	}
 }
 
 
 .reviewscontainer {
 
-
+	
 	background: rgba(255, 255, 255, 0.9);
 	padding: 20px;
 
@@ -180,7 +183,9 @@ a:hover {
 	border: 1px solid #44B4D5;
 	border-radius: 20px;
 
-	
+	td {
+		word-break:break-all;
+	}
 	p {
 		font-size: 14px;
 	}
@@ -342,4 +347,25 @@ pre {
 	color: white;
   font-size: 18px;
   text-align: center;
+}
+
+
+
+
+
+	/* Force table to not be like tables anymore */
+table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+.table {
+        max-width: fixed;
+        white-space: nowrap;
+        table-layout: fixed;
+        word-wrap: break-word;
+        overflow: hidden;
+
+    }
+.reviewtext:hover {
+	max-height: initial;
 }
