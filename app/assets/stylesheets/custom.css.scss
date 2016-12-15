@@ -354,11 +354,11 @@ pre {
 
 
 	/* Force table to not be like tables anymore */
-table, thead, tbody, th, td, tr { 
+rtable, rthead, rtbody, rth, rtd, rtr { 
 		display: block; 
 	}
 	
-.table {
+.rrtable {
 				padding: 10px;
         max-width: fixed;
         
@@ -372,7 +372,7 @@ table, thead, tbody, th, td, tr {
 	height: 100%;
 	max-height: initial;
 	position: relative;
-	word-wrap: break-word;
+	/*word-wrap: break-word;*/
 	/*word-break: break-all;*/
 	/*overflow-y: scroll;*/
 	

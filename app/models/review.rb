@@ -5,4 +5,21 @@ class Review < ActiveRecord::Base
 
 
 	belongs_to :restaurant
+
+
+
+
+
+
+	# Models handle Data-related tasks.  We need to validate that each of the fields is filled in
+
+
+
+	validates :rating, :comment, presence: true
+	validates :rating, numericality: {
+		only_integer: true,
+		greater_than_or_equal_to: 1,
+		less_than_or_equal_to: 10,
+		message: "should be a star rating between 1 and 10"
+	}	
 end
