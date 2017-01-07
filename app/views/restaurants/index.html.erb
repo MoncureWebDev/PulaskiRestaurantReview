@@ -11,34 +11,46 @@
 
 </div>
 <div class="jumbotron tablecontainer">
-<table class="table table-hover table-responsive">
+<div class="table-responsive">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Address</th>
       <th>Phone</th>
+      <th>Address</th>
+      
       <th>Website</th>
-      <th colspan="3"></th>
+      <!--th colspan="3"></th-->
     </tr>
   </thead>
 
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.phone %></td>
-        <td><%= link_to restaurant.website, restaurant.website %></td>
-        <td><%= link_to 'Show', restaurant, class: "btn btn-link" %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-link" %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+        <td class="tdName"><%= link_to restaurant.name, restaurant, class: "btn btn-link restaurantname" %></td>
+        <td class="tdPhone"><%= restaurant.phone %></td>
+        <td class="tdAddress"><%= restaurant.address %></td>
+       
+        <td class="tdWebsite"><%= link_to restaurant.website, restaurant.website %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
-</div>
+
+</div><!--END .table-responsive-->
+
+</div><!--End .tablecontainer-->
 
 <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-link" %>
 
+
+<% if user_signed_in? && current_user.admin? %>
+
+  <div class="jumbotron admincontrols"><br>
+  <h2>Admin Add-Restaurant Controls:</h2>
+  <%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-primary" %>
+  </div>
+
+<% end %>

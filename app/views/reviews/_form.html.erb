@@ -1,4 +1,4 @@
-<div class="jumbotron tablecontainer">
+
 <%= form_for([@restaurant, @review]) do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation" class="alert alert-danger alert-dismissible">
@@ -26,7 +26,6 @@
     <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
-</div>
 
 
 <script> //DISPLAY OUR STAR RATING SYSTEM ON OUR .star-rating DIV ABOVE!!!

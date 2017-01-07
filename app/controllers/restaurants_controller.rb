@@ -1,6 +1,13 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
+
+  before_action :authenticate_user!, except: [:index, :show]
+
+  before_action :check_user, except: [:index, :show]
+  #Everyone should be able to look at the index page, and the individual restaurants' Show pages...
+  
+
   # GET /restaurants
   # GET /restaurants.json
   def index
@@ -12,6 +19,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    #@restaurants = Restaurant.all
     #defining @reviews and showing review for the restaurant
     @reviews = Review.where(restaurant_id: @restaurant.id).order("created_at DESC")
     #take all our restaurant ratings, average them, round to 2 decimal places.
@@ -23,7 +31,7 @@ class RestaurantsController < ApplicationController
       @avg_rating = @reviews.average(:rating).round(2)
     end
 
-   
+
   end
 
   # GET /restaurants/new
@@ -80,6 +88,20 @@ class RestaurantsController < ApplicationController
     def set_restaurant
       @restaurant = Restaurant.find(params[:id])
     end
+
+
+
+    def check_user
+      unless current_user.admin?
+        redirect_to root_url, alert: "Sorry, only admins can do that!"
+      end
+    end
+
+
+
+
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params

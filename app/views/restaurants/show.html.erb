@@ -5,7 +5,7 @@
 <div class="row">
 <div class="col-md-4">
 
-
+<div class="restaurantinfo">
 <h2>
 	<%= @restaurant.name %>
 </h2>
@@ -42,23 +42,57 @@
   <%= link_to @restaurant.website, @restaurant.website %>
 </p>
 
-<%= link_to 'Edit Restaurant', edit_restaurant_path(@restaurant), class: "btn btn-link" %> |
-<%= link_to 'Back', restaurants_path, class: "btn btn-link" %>
+
+
+
+
+
+<% if user_signed_in? && current_user.admin? %>
+	<%= link_to edit_restaurant_path(@restaurant), class: "btn btn-primary" do %>
+		<span class="glyphicon glyphicon-edit"></span> <span> </span> Edit Restaurant
+	<% end %>	
+<% end %>
+
+
+
+
+
+
+
 <br/>
+<%= link_to new_restaurant_review_path(@restaurant), class: "btn btn-primary writeareviewbutton" do %>
+	<span class="glyphicon glyphicon-pencil"></span> Write a Review
+<% end %>
+
+ 
 <br/>
+
+
+
+
+</div><!--END .restaurantinfo-->
+
 <br/>
-<%= link_to "Write a Review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+<!--a class="btn btn-primary backbutton2" href="/restaurants"><span class="glyphicon glyphicon-arrow-left"></span><span class="glyphicon glyphicon-arrow-left"></span> Back</a-->
+<% if user_signed_in? && current_user.admin? %>
+	<%= link_to @restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger deletebutton" do %>
+		<span class="glyphicon glyphicon-remove-sign"></span>  Delete Restaurant
+	<% end %>
+<% end %> 
+
+<br>
+
+<%= link_to  restaurants_path, class: "btn btn-primary backbutton" do %>
+	<span class="glyphicon glyphicon-circle-arrow-left"></span>  Back to Index
+<% end %>
 
 
 
-
-
-
-</div><!--END col-md-8 -->
+</div><!--END col-md-4 -->
 <div class="col-md-8">
 
 
-
+<!--	WANT TO ADD GLYPHICONS TO BUTTONS  -->
 
 
 
@@ -101,9 +135,22 @@
 
 
 				<div class="star-rating" data-score= <%= review.rating %> ></div>
-				<p class="reviewtext"><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %></p>
+				<p class="reviewtext"><%= h(review.comment).gsub(/\n/, '<br/>').html_safe %>
 					
 				
+<!--			Check to see if review author signed in, or admin........-->
+
+<!--	If so, give them links to edit or destroy the review.........-->
+			
+				<% if user_signed_in? %>
+					<% if (review.user == current_user) || (current_user.admin?) %><br>
+						<%= link_to "Edit your review", edit_restaurant_review_path(@restaurant, review) %> | 
+						<%= link_to "Delete", restaurant_review_path(@restaurant, review), method: :delete %>
+					<% end %>
+				<% end %>
+					</p>
+
+
 			</td>
 		</tr>
 
@@ -120,7 +167,7 @@
 </div>
 
 
-</div><!--END col-md-4 -->
+</div><!--END col-md-8 -->
 </div><!--END .row-->
 
 

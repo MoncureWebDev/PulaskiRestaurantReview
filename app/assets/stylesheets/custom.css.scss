@@ -15,6 +15,9 @@ html, body {
 	height: 100%;
 }
 
+
+
+
 a:hover {
 	
 }
@@ -45,28 +48,20 @@ a:hover {
 .navbar-fixed {
 	opacity: 1;
 	height: 130px;
+	box-shadow: 0px 10px 10px #686868;
 	.container-fluid {
 		padding-top: 25px;
 		height: 130px;
 		background-color: #b80b03;
-		
-
-	/*Trying to add BG image to navbar*/
+			/*Trying to add BG image to navbar*/
 		background: url("https://s3.amazonaws.com/pulaski-restaurant-review/navback.jpg") no-repeat center center; 
 		margin: 0px;
 		height: 130px;
 		width: 100%;
-
-
-
-
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-
-
-
 
 		.navbar-nav > li > a {
 			margin-top: 15px;
@@ -91,7 +86,6 @@ a:hover {
 			text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 		}/*END .navbar-brand*/
 
-
 		.navbar-form {
 			margin-top: 25px;
 		}
@@ -100,10 +94,17 @@ a:hover {
 
 
 
+
+
+
+
 .h3Back {
 	font-size: 20px;
 }
 
+.jumbotron {
+	box-shadow: 1px 5px 20px #686868;
+}
 
 
 
@@ -154,6 +155,9 @@ a:hover {
 	background: rgba(253, 248, 225, 0.9);
 	
 	border: 1px solid #f2cb3b;
+	.writeareviewbutton {
+		margin-bottom: 50px;
+	}
 
 	p {
 		font-size: 18px;
@@ -169,29 +173,39 @@ a:hover {
 	a {
 		font-size: 18px;
 	}
+
+	.btn {
+		
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding: 6px;
+	}
+	.glyphicon {
+		color: white;
+	}
 }
 
 
 .reviewscontainer {
 
-	
+	margin-right: -20px;
 	background: rgba(255, 255, 255, 0.9);
 	padding: 20px;
-
-
-	
 	border: 1px solid #44B4D5;
-	border-radius: 20px;
+	border-radius: 10px;
 
-	td {
-		word-break:break-all;
-	}
+
 	p {
 		font-size: 14px;
 	}
 
 	h2 {
 		text-align: center;
+	}
+
+	a {
+		padding: 10px;
+		text-decoration: underline;
 	}
 }
 
@@ -234,37 +248,209 @@ a:hover {
 
 
 
-.jumbotron {
-	box-shadow: 1px 5px 20px #686868;
+.table {
+	width: 100%;
+
+	.tdName, .tdPhone, .tdAddress {
+		border-right: 0.5px solid lightgrey;
+	}
+	.tdName, .tdPhone, .tdAddress, .tdWebsite {
+		white-space: pre-wrap;
+	}
+	
+
+
+	th {
+		text-align: center;
+		font-size: 18px;
+		border: 1px solid #44B4D5;
+		border-top: 1px solid #44B4D5;
+		background-color: #99E0FF;
+		margin: 5px;
+	}
+
+	a {
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	.glyphicon {
+		color: white;
+	}
+
+	td {
+	/*	width: 100%;
+		white-space: nowrap;
+		overflow: auto; */
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		max-width: 100px;
+		word-wrap: normal;
+		/*text-align: auto;*/
+	}
+	.tdName {
+		text-align: left;
+		word-wrap: normal;
+
+	}
+	.restaurantname { /* RESTAURANT NAME LINK TO SHOW PAGE */
+		font-size: 20px;
+		text-decoration: none;
+		margin-left: -15px;
+		word-wrap: break-word;
+
+	
+	}
+
+	.tdWebsite {
+		word-wrap: break-word;
+
+	}
+
+
+
+
+
 }
+/*        RESTAURANTS INDEX PAGE TABLE STYLES        */
+
+.restaurantindex {
+	
+	/*max-height: initial;
+	max-width: initial;
+	position: relative;
+	white-space: initial;
+	overflow: auto;
+	table-layout: fixed;*/
+	/*overflow: auto;
+	white-space: pre-wrap;
+
+	table-layout: auto;
+	tbody {
+		width: 100%;
+	}
+
+
+
+	th {
+		width: 100%;
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+
+
+*/
+}
+
+
+
+
+/*			RESTAURANTS SHOW PAGE STYLES         */
+
+.restaurantinfo {
+	border-radius: 10px;
+	width: 100%;
+	margin: 0 auto;
+	margin-left: -30px;
+	margin-right: -50px;
+	text-align: center;
+	padding-top: 20px;
+
+
+	/*background-color: #44B4D5;*/
+	/*background: rgba(6,220,251, 0.5);*/
+
+	/*background: rgba(253, 248, 225, 0.5);*/
+	background: rgba(255, 255, 255, 0.2);
+	/*background: linear-gradient(red, black);*/
+	
+	border: 1px solid #44B4D5;
+	/*border-radius: 30px;*/
+	font-size: 14px;
+	img {
+
+	}
+
+	h2 {
+		text-align: center;
+	}
+	.deleterestaurant {
+		margin-bottom: 30px;
+	}
+}
+/*.deletebutton{
+	margin-top: 20px;
+
+	padding-top: -10px;
+	
+	/*text-align: left;
+	
+	.glyphicon {
+		padding-top: 6px;
+		color: white;
+	}
+}
+.backbutton {
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	padding-top: -10px;
+
+	
+	/*text-align: left
+	
+	.glyphicon {
+		padding-top: 6px;
+		color: white;
+	}
+} */
+
+.reviewtext {
+	width: 100%;
+	height: 100%;
+	max-height: initial;
+	position: relative;
+	/*word-wrap: break-word;*/
+	/*word-break: break-all;*/
+	/*overflow-y: scroll;*/
+	
+/*THE BELOW SETTINGS ARE THE ONLY THING I FOUND TO MAKE MY REVIEW TEXT WORD-WRAP!!!!!!*/
+	white-space: normal;
+	overflow: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .signupcontainer {
 	background: rgba(187,222,251, 0.9);
 	border: 1px solid #44B4D5;
 	font-size: 14px;
-	
-
 
 	.input-group-addon {
 		background-color: #64b5f6;
 	}
-
-
 
 	h2 {
 		padding-top: 2px;
 		height: 38px;
 		width: 200px;
 		margin: 0 auto;
-		border-radius: 15px;
+		border-radius: 5px;
 		text-align: center;
 		background-color: #64b5f6;
 	}
-
-
-
-
 
 } /*         End .signupcontainer            */
 
@@ -277,15 +463,61 @@ a:hover {
 
 
 .cancelMyAccount {
+	background: rgba(255,200,200, 0.9);
+	text-align: center;
+	border: 1px solid #F70000;
+	width: 60%;
+	margin: auto;
+	h2 {
+		width: 100%;
+		background: none;
+	}
+
+	h3 {
+		text-align: center;
+		}
+
+	p {
+		text-align: center;
+		}
+
+}/*END JUMBOTRON STYLES*/
+
+
+
+
+.adminBorder{
+
+	/*background-color: #44B4D5;*/
+	/*background: rgba(6,220,251, 0.5);*/
+
+	/*background: rgba(253, 248, 225, 0.5);*/
+	background: none;
+	/*background: linear-gradient(red, black);*/
 	
-	
+	border: 1px solid #44B4D5;
+	/*border-radius: 30px;*/
+	font-size: 14px;
+
+
+	h2 {
+		text-align: center;
+	}
+}
+
+.admincontrols {
 
 	background: rgba(255,200,200, 0.9);
 	text-align: center;
 	border: 1px solid #F70000;
-	width: 600px;
+	width: 40%;
 	margin: auto;
-
+	margin-bottom: 50px;
+	h2 {
+		margin-top: -20px;
+		width: 100%;
+		background: none;
+	}
 
 	h3 {
 		text-align: center;
@@ -296,13 +528,8 @@ a:hover {
 		}
 
 
-}/*END JUMBOTRON STYLES*/
-
-
-
-
-
-
+}
+ 
 
 
 
@@ -314,10 +541,6 @@ a:hover {
 }
 
 
-/*Table Column Autowidth*/
-td {
-	white-space: nowrap;
-}
 
 
 
@@ -335,6 +558,7 @@ pre {
 
 
 .footer {
+	box-shadow: 0px -5px 10px #686868;
 	height: 4em;
 	/*position: absolute;*/
 	right: 0;
@@ -354,29 +578,13 @@ pre {
 
 
 	/* Force table to not be like tables anymore */
-rtable, rthead, rtbody, rth, rtd, rtr { 
-		display: block; 
-	}
-	
-.rrtable {
+/*
+.table {
 				padding: 10px;
         max-width: fixed;
         
-        table-layout: fixed;
+        table-layout: fixed; */
         /*word-wrap: break-word;*/
         /*overflow: hidden;*/
 
-    }
-.reviewtext {
-	width: 100%;
-	height: 100%;
-	max-height: initial;
-	position: relative;
-	/*word-wrap: break-word;*/
-	/*word-break: break-all;*/
-	/*overflow-y: scroll;*/
-	
-/*THE BELOW SETTINGS ARE THE ONLY THING I FOUND TO MAKE MY REVIEW TEXT WORD-WRAP!!!!!!*/
-	white-space: normal;
-	overflow: auto;
-}
+   /*}*/
