@@ -66,14 +66,6 @@
 
  
 <br/>
-
-
-
-
-</div><!--END .restaurantinfo-->
-
-<br/>
-<!--a class="btn btn-primary backbutton2" href="/restaurants"><span class="glyphicon glyphicon-arrow-left"></span><span class="glyphicon glyphicon-arrow-left"></span> Back</a-->
 <% if user_signed_in? && current_user.admin? %>
 	<%= link_to @restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger deletebutton" do %>
 		<span class="glyphicon glyphicon-remove-sign"></span>  Delete Restaurant
@@ -87,6 +79,23 @@
 <% end %>
 
 
+</div><!--END .restaurantinfo-->
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<!--a class="btn btn-primary backbutton2" href="/restaurants"><span class="glyphicon glyphicon-arrow-left"></span><span class="glyphicon glyphicon-arrow-left"></span> Back</a-->
+
+
 
 </div><!--END col-md-4 -->
 <div class="col-md-8">
@@ -97,6 +106,30 @@
 
 
 <!--    REVIEWS SECTION    -->
+<div class="mapscontainer">
+<h2>Map</h2>
+	<iframe class="googleMap"
+
+	  width="100%"
+	  height="300"
+
+	  frameborder="0" style="border:0"
+	  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCOuPTTq4UuEXnKY_AZVaM-HCfjbzUIRtI
+	    &q=<%= @restaurant.address.parameterize %>&zoom=14" allowfullscreen>
+	</iframe>
+<!--My Google Maps Embed API key:  AIzaSyCOuPTTq4UuEXnKY_AZVaM-HCfjbzUIRtI-->
+
+</div>
+
+
+<br>
+
+
+
+
+
+
+
 
 <div class="reviewscontainer">
 <h2>Reviews</h2>
