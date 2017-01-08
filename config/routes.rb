@@ -5,7 +5,16 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  resources :restaurants do 
+  resources :restaurants do # "resources :restaurants" is the code that creates our various restaurant related URL's...To add a new one we need to go to the next line...
+    #begin searchkick installation
+    collection do
+      get 'search'
+    end
+    #End of searchkick installation
+    # This just creates a new URL at localhost:3000/restaurants/search
+    # The word "collection" here just means search will apply to more than one restaurant.
+    # If we were only applying search to 1 restaurant, then we would use the word 'member'
+
     resources :reviews, except: [:show, :index]
   end
 

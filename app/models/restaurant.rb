@@ -1,6 +1,9 @@
 class Restaurant < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
 
+	# Type "searchkick" into the model file that we want to be able to search....
+	searchkick
+
 	has_many :reviews
 
 

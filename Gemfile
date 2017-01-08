@@ -19,7 +19,7 @@ gem "figaro", "~> 0.7.0"
 gem 'mini_magick'
 gem 'devise', '~> 3.4.0'
 gem 'twitter-bootstrap-rails', '~> 3.2', '>= 3.2.2'
-
+gem 'searchkick'
 
 
 

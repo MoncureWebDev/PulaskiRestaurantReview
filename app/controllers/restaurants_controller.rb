@@ -2,11 +2,32 @@ class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
 
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:search, :index, :show]
 
-  before_action :check_user, except: [:index, :show]
+  before_action :check_user, except: [:search, :index, :show]
   #Everyone should be able to look at the index page, and the individual restaurants' Show pages...
+
+
   
+
+#*******************    SEARCH FUNCTIONALITY  ****************************
+  def search
+    if params[:search].present? #IF SEARCH TERMS ENTERED....
+      @restaurants = Restaurant.search(params[:search])   #SEARCH restaurants Database for matching terms...
+    else  # These matches are stored in a variable called "@restaurants"
+      @restaurants = Restaurant.all  #If search was left blank, just display all restaurants in our Database!!!
+    end
+  end
+#*******************    SEARCH FUNCTIONALITY  ****************************
+# Now we need to write our own Search page view to display the results....search.html.erb
+
+
+
+
+
+
+
+
 
   # GET /restaurants
   # GET /restaurants.json

@@ -196,6 +196,10 @@ a:hover {
 	border-radius: 10px;
 	word-wrap: normal;
 
+	.link {
+		word-wrap: break-word;
+	}
+
 
 	p {
 		font-size: 14px;
